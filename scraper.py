@@ -1,3 +1,4 @@
+from tkinter import messagebox
 import requests
 from bs4 import BeautifulSoup
 from tkinter import *
@@ -51,6 +52,12 @@ class App:
         # Área de texto para mostrar los resultados
         self.results = Text(root, wrap=WORD, height=15)
         self.results.pack(pady=10)
+
+    # Mostrar ventana emergente de bienvenida
+        self.show_welcome_message()
+
+    def show_welcome_message(self):
+        messagebox.showinfo("Bienvenid@", "¡Bienvenido al Web Scraper de Productos!\n\nActualmente solo funciona para la web https://www.electronicoscaldas.com/es/ y cualquiera de sus busquedas.")
 
     def extract_products(self):
         url = self.url_entry.get()  # Obtener la URL del campo de entrada
